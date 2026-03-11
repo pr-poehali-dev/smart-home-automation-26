@@ -1,33 +1,40 @@
 import { Badge } from "@/components/ui/badge"
+import EquationBalancer from "./EquationBalancer"
+import MoleCalculator from "./MoleCalculator"
 
 export const sections = [
   {
     id: 'hero',
-    subtitle: <Badge variant="outline" className="text-white border-white">Набор открыт</Badge>,
-    title: "Время строить будущее.",
+    subtitle: <Badge variant="outline" className="text-white border-white">Химия — просто</Badge>,
+    title: "Химический калькулятор.",
+    content: "Балансируйте уравнения и рассчитывайте моли вещества в пару кликов.",
     showButton: true,
-    buttonText: 'Присоединиться'
+    buttonText: 'Попробовать'
+  },
+  {
+    id: 'balancer',
+    subtitle: <Badge variant="outline" className="text-[#00FF88] border-[#00FF88]/50">Балансировщик</Badge>,
+    title: "Уравняй реакцию.",
+    content: "Введите уравнение в формате A + B -> C и получите расставленные коэффициенты мгновенно.",
+    customContent: <EquationBalancer />
+  },
+  {
+    id: 'moles',
+    subtitle: <Badge variant="outline" className="text-[#00AAFF] border-[#00AAFF]/50">Расчёт молей</Badge>,
+    title: "Рассчитай моли.",
+    content: "Введите химическую формулу и массу вещества — получите количество молей, молярную массу и число молекул.",
+    customContent: <MoleCalculator />
   },
   {
     id: 'about',
-    title: 'Почему мы?',
-    content: 'Мы предоставляем ресурсы, менторство и поддерживающее сообщество для развития ваших проектов.'
+    title: 'Всё в одном месте.',
+    content: 'Балансировка уравнений реакций, расчёт количества вещества, молярной массы и числа молекул — без лишних сложностей.'
   },
   {
-    id: 'features',
-    title: 'Что мы предлагаем',
-    content: 'Доступ к экспертным консультациям, нетворкингу и современным инструментам для ускорения вашего роста.'
-  },
-  {
-    id: 'testimonials',
-    title: 'Истории успеха',
-    content: 'Узнайте, как участники сообщества превратили свои идеи в успешные проекты.'
-  },
-  {
-    id: 'join',
-    title: 'Начните сейчас',
-    content: 'Готовы вывести свой проект на новый уровень? Присоединяйтесь к нашему сообществу и начните строить своё будущее.',
+    id: 'cta',
+    title: 'Готов решать задачи?',
+    content: 'Используй инструменты прямо сейчас — бесплатно и без регистрации.',
     showButton: true,
-    buttonText: 'Начать'
+    buttonText: 'К калькулятору'
   },
 ]

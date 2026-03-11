@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import type { SectionProps } from "@/types"
 
-export default function Section({ id, title, subtitle, content, isActive, showButton, buttonText }: SectionProps) {
+export default function Section({ id, title, subtitle, content, customContent, isActive, showButton, buttonText, onButtonClick }: SectionProps) {
   return (
     <section id={id} className="relative h-screen w-full snap-start flex flex-col justify-center p-8 md:p-16 lg:p-24">
       {subtitle && (
@@ -33,6 +33,16 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           {content}
         </motion.p>
       )}
+      {customContent && (
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={isActive ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-8 w-full max-w-2xl"
+        >
+          {customContent}
+        </motion.div>
+      )}
       {showButton && (
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,7 +53,8 @@ export default function Section({ id, title, subtitle, content, isActive, showBu
           <Button
             variant="outline"
             size="lg"
-            className="text-[#FF4D00] bg-transparent border-[#FF4D00] hover:bg-[#FF4D00] hover:text-black transition-colors"
+            onClick={onButtonClick}
+            className="text-[#00FF88] bg-transparent border-[#00FF88] hover:bg-[#00FF88] hover:text-black transition-colors"
           >
             {buttonText}
           </Button>
